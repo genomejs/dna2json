@@ -74,6 +74,12 @@ Install this module globally for this simple CLI.
 
 It will stream the SNPs to disk as JSON - pretty easy.
 
+## Using your SNPs
+
+Once you have your data in the right format you can use the library of genosets by genomejs.
+
+You can view a list of these at [this npm search](https://npmjs.org/search?q=genoset)
+
 ## LICENSE
 
 (MIT License)
