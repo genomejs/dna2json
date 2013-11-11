@@ -1,7 +1,7 @@
 {
    "name":"dna2json",
    "description":"Formats your DNA file as JSON",
-   "version":"0.0.1",
+   "version":"0.1.0",
    "homepage":"http://github.com/genomejs/dna2json",
    "repository":"git://github.com/genomejs/dna2json.git",
    "author":"Fractal <contact@wearefractal.com> (http://wearefractal.com/)",

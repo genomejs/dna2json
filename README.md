@@ -20,7 +20,7 @@
 
 ## Downloading your data
 
-Go to [23andme Raw Data](https://www.23andme.com/you/download/) to get your dna.txt file. You can download data from all chromosomes or only specific ones - dna2json doesn't care.
+Go to [23andme Raw Data](https://www.23andme.com/you/download/) to get your dna.txt file. You can download data from all cs or only specific ones - dna2json doesn't care.
 
 ## SNP
 
@@ -57,13 +57,22 @@ Output will look a little like this (these are my genes don't steal them):
 
 ```javascript
 [
-{"id":"rs10749813","chromosome":1,"position":73557945,"genotype":null},
-{"id":"rs4128552","chromosome":1,"position":73560811,"genotype":"GT"},
-{"id":"rs12033354","chromosome":1,"position":73573941,"genotype":"AG"},
-{"id":"rs4603080","chromosome":1,"position":73579237,"genotype":"AG"},
-{"id":"rs4582739","chromosome":1,"position":73602381,"genotype":"CT"},
-{"id":"rs4452995","chromosome":1,"position":73613560,"genotype":"CT"}
+{"id":"rs10749813","c":1,"pos":73557945,"g":null},
+{"id":"rs4128552","c":1,"pos":73560811,"g":"GT"},
+{"id":"rs12033354","c":1,"pos":73573941,"g":"AG"},
+{"id":"rs4603080","c":1,"pos":73579237,"g":"AG"},
+{"id":"rs4582739","c":1,"pos":73602381,"g":"CT"},
+{"id":"rs4452995","c":1,"pos":73613560,"g":"CT"}
 ]
+```
+
+The keys have been condensed due to data size. Here is the mapping
+
+```
+id = the rsid or internal id
+c = chromosome (1-22, X, Y, or MT)
+pos = position
+g = genotype
 ```
 
 ## CLI

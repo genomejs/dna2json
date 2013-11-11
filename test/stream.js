@@ -10,9 +10,9 @@ fakedna += "rs4477212 1 82154 AA\n";
 
 var expected = {
   id: "rs4477212",
-  chromosome: 1,
-  position: 82154,
-  genotype: "AA"
+  c: 1,
+  pos: 82154,
+  g: "AA"
 };
 
 describe('dna2json', function() {
@@ -30,9 +30,9 @@ describe('dna2json', function() {
       parser.on("data", function(snp){
         should.exist(snp);
         should.exist(snp.id);
-        should.exist(snp.chromosome);
-        should.exist(snp.position);
-        should.exist(snp.genotype);
+        should.exist(snp.c);
+        should.exist(snp.pos);
+        should.exist(snp.g);
         snp.should.eql(expected);
         done();
       });
