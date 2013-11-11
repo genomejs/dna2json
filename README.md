@@ -34,7 +34,7 @@ This has only been tested with DNA files from 23andme. Other services may not us
 
 23andme genome files are one line per SNP and usually ~30MB (which is why this is streaming only)
 
-There are a ton of SNPs (my DNA had 960614) so this will take a bit to run (especially if you are writing to disk).
+There are a ton of SNPs (my DNA had 33000) so this will take a bit to run (especially if you are writing to disk).
 
 ## Usage
 
