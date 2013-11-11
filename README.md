@@ -52,20 +52,15 @@ fs.createReadStream("dna.txt")
   .pipe(fs.createWriteStream("dna.json"));
 ```
 
-Output will look a little like this:
+Output will look a little like this (these are my genes don't steal them):
 
 ```javascript
 [
-{"id":"rs10749813","chromosome":1,"position":73557945,"genotype":null}
-,
-{"id":"rs4128552","chromosome":1,"position":73560811,"genotype":"GT"}
-,
-{"id":"rs12033354","chromosome":1,"position":73573941,"genotype":"AG"}
-,
-{"id":"rs4603080","chromosome":1,"position":73579237,"genotype":"AG"}
-,
-{"id":"rs4582739","chromosome":1,"position":73602381,"genotype":"CT"}
-,
+{"id":"rs10749813","chromosome":1,"position":73557945,"genotype":null},
+{"id":"rs4128552","chromosome":1,"position":73560811,"genotype":"GT"},
+{"id":"rs12033354","chromosome":1,"position":73573941,"genotype":"AG"},
+{"id":"rs4603080","chromosome":1,"position":73579237,"genotype":"AG"},
+{"id":"rs4582739","chromosome":1,"position":73602381,"genotype":"CT"},
 {"id":"rs4452995","chromosome":1,"position":73613560,"genotype":"CT"}
 ]
 ```
