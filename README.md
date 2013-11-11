@@ -45,7 +45,8 @@ var es = require('JSONStream');
 // dna.createParser() returns a duplex stream
 // input = text from your dna file
 // output = SNPs as JSON
-// to write to disk 
+// to write to disk just pipe it to JSONStream then to fs
+
 fs.createReadStream("dna.txt")
   .pipe(dna.createParser())
   .pipe(JSONStream.stringify())
