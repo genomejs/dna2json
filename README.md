@@ -18,6 +18,10 @@
 </tr>
 </table>
 
+## Downloading your data
+
+Go to [23andme Raw Data](https://www.23andme.com/you/download/) to get your dna.txt file. You can download data from all chromosomes or only specific ones - dna2json doesn't care.
+
 ## SNP
 
 A SNP (single-nucleotide polymorphism - pronounced "snip") is a mutation in your genome. SNPs can tell you a lot about yourself (hair color, height, muscle type, allergies, response to disease, response to pharmaceuticals, heritage, etc.).
