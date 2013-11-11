@@ -2,8 +2,8 @@
    "name":"dna2json",
    "description":"Formats your DNA file as JSON",
    "version":"0.0.1",
-   "homepage":"http://github.com/wearefractal/dna2json",
-   "repository":"git://github.com/wearefractal/dna2json.git",
+   "homepage":"http://github.com/genomejs/dna2json",
+   "repository":"git://github.com/genomejs/dna2json.git",
    "author":"Fractal <contact@wearefractal.com> (http://wearefractal.com/)",
    "main":"./index.js",
    "tags": ["23andme", "dna", "genetics", "genes", "json", "format"],
@@ -29,7 +29,7 @@
    "licenses":[
       {
          "type":"MIT",
-         "url":"http://github.com/wearefractal/dna2json/raw/master/LICENSE"
+         "url":"http://github.com/genomejs/dna2json/raw/master/LICENSE"
       }
    ]
 }
