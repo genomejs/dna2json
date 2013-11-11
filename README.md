@@ -40,7 +40,7 @@ There are a ton of SNPs (my DNA had 33000) so this will take a bit to run (espec
 
 ```javascript
 var dna = require('dna2json');
-var es = require('JSONStream');
+var JSONStream = require('JSONStream');
 
 // dna.createParser() returns a duplex stream
 // input = text from your dna file
