@@ -40,7 +40,7 @@ There are a ton of SNPs (my DNA had 33000) so this will take a bit to run (espec
 
 ```javascript
 var dna = require('dna2json');
-var es = require('JSONStream');
+var JSONStream = require('JSONStream');
 
 // dna.createParser() returns a duplex stream
 // input = text from your dna file
@@ -82,6 +82,12 @@ Install this module globally for this simple CLI.
 `Usage: dna2json <input file> <output file>`
 
 It will stream the SNPs to disk as JSON - pretty easy.
+
+## Using your SNPs
+
+Once you have your data in the right format you can use the library of genosets by genomejs.
+
+You can view a list of these at [this npm search](https://npmjs.org/search?q=genoset)
 
 ## LICENSE
 
