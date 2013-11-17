@@ -18,25 +18,36 @@
 </tr>
 </table>
 
-## Downloading your data
-
-Go to [23andme Raw Data](https://www.23andme.com/you/download/) to get your dna.txt file. You can download data from all cs or only specific ones - dna2json doesn't care.
-
 ## SNP
 
 A SNP (single-nucleotide polymorphism - pronounced "snip") is a mutation in your genome. SNPs can tell you a lot about yourself (hair color, height, muscle type, allergies, response to disease, response to pharmaceuticals, heritage, etc.).
 
-## Compatibility
+Your DNA file from any vendor will be a big list of these SNPs. Think of it like a diff against the human genome. Most vendors will compare your genome against [Revision 36](http://www.ncbi.nlm.nih.gov/projects/mapview/map_search.cgi?taxid=9606&build=36)
 
-This has only been tested with DNA files from 23andme. Other services may not use the same format.
+## Vendors
 
-## Speed
+| Name | Supported | Price | Sampling Method | Autosomal SNPs | Y SNPs | X SNPs | MT SNPs | Raw Data Download |
+| 23andMe | Yes | 99 USD | Saliva | 967,000 | 3,089 | 26,087 | 2,737 | [Yes](https://www.23andme.com/you/download/) |
+| ancestryDNA | Not yet | 99 USD | Saliva | 682,549 | 885 | 17,604 | 0 | [Yes](http://ldna.ancestry.com/atFAQ.aspx#raw-3) |
+| FamilyTree | Not yet | 99 USD | Cheek Swab | 708,092 | 0 | 18,091 | 0 | [Yes](http://www.familytreedna.com/faq/answers.aspx?id=17#606) |
 
-23andme genome files are one line per SNP and usually ~30MB (which is why this is streaming only)
+tl;dr use 23andMe they provide more data and are the cheapest
 
-There are a ton of SNPs (my DNA had 33000) so this will take a bit to run (especially if you are writing to disk).
+## CLI Usage
 
-## Usage
+Use this if you just want to convert your data to the correct format so you can start querying your genome.
+
+```
+$ npm install dna2json -g
+$ dna2json
+Usage: dna2json <input file> <output file>
+$ dna2json dna.txt dna.json
+This will take a while...
+```
+
+It will stream the SNPs to disk as JSON - pretty easy.
+
+## Module Usage
 
 ```javascript
 var dna = require('dna2json');
@@ -75,19 +86,13 @@ pos = position
 g = genotype
 ```
 
-## CLI
-
-Install this module globally for this simple CLI.
-
-`Usage: dna2json <input file> <output file>`
-
-It will stream the SNPs to disk as JSON - pretty easy.
-
 ## Using your SNPs
 
 Once you have your data in the right format you can use the library of genosets by genomejs.
 
 You can view a list of these at [this npm search](https://npmjs.org/search?q=genoset)
+
+You can also make your own tools that analyze your DNA however you want. It's yours! Here is a tool that will help query your DNA [GQL](https://github.com/genosetjs/gql)
 
 ## LICENSE
 
