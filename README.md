@@ -26,8 +26,8 @@ Your DNA file from any vendor will be a big list of these SNPs. Think of it like
 
 ## Vendors
 
-| Name | Supported | Price | Sampling Method | Autosomal SNPs | Y SNPs | X SNPs | MT SNPs | Raw Data Download |
-|------|-----------|-------|-----------------|----------------|--------|--------|---------|-------------------|
+| Name | Supported | Price | Sample | Autosomal SNPs | Y SNPs | X SNPs | MT SNPs | Raw Data Download |
+|------|-----------|-------|--------|----------------|--------|--------|---------|-------------------|
 | 23andMe | Yes | 99 USD | Saliva | 967,000 | 3,089 | 26,087 | 2,737 | [Yes](https://www.23andme.com/you/download/) |
 | ancestryDNA | Not yet | 99 USD | Saliva | 682,549 | 885 | 17,604 | 0 | [Yes](http://ldna.ancestry.com/atFAQ.aspx#raw-3) |
 | FamilyTree | Not yet | 99 USD | Cheek Swab | 708,092 | 0 | 18,091 | 0 | [Yes](http://www.familytreedna.com/faq/answers.aspx?id=17#606) |
