@@ -18,11 +18,15 @@
 </tr>
 </table>
 
-## SNP
+## Terminology
+
+### SNP
 
 A SNP (single-nucleotide polymorphism - pronounced "snip") is a mutation in your genome. SNPs can tell you a lot about yourself (hair color, height, muscle type, allergies, response to disease, response to pharmaceuticals, heritage, etc.).
 
 Your DNA file from any vendor will be a big list of these SNPs. Think of it like a diff against the human genome. Most vendors will compare your genome against [Revision 36](http://www.ncbi.nlm.nih.gov/projects/mapview/map_search.cgi?taxid=9606&build=36)
+
+![autosome](http://www.isogg.org/w/images/e/ed/Autosomes_diagram.jpg)
 
 ## Vendors
 
