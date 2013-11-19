@@ -4,15 +4,15 @@ var fs = require('fs');
 var path = require('path');
 require('mocha');
 
-var fakedna = "";
-fakedna += "# 23andMe\n";
-fakedna += "rs4477212 1 82154 AA\n";
+var fakedna = '';
+fakedna += '# 23andMe\n';
+fakedna += 'rs4477212 1 82154 AA\n';
 
 var expected = {
-  id: "rs4477212",
+  id: 'rs4477212',
   c: 1,
   pos: 82154,
-  g: "AA"
+  g: 'AA'
 };
 
 describe('dna2json', function() {
@@ -27,7 +27,7 @@ describe('dna2json', function() {
     it('should return a stream that parses SNP objects', function(done) {
       var parser = dna2json.createParser();
 
-      parser.on("data", function(snp){
+      parser.on('data', function(snp){
         should.exist(snp);
         should.exist(snp.id);
         should.exist(snp.c);
