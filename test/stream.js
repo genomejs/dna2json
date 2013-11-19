@@ -5,7 +5,7 @@ var path = require('path');
 require('mocha');
 
 var fakedna = "";
-fakedna += "# comment\n";
+fakedna += "# 23andMe\n";
 fakedna += "rs4477212 1 82154 AA\n";
 
 var expected = {

@@ -117,11 +117,11 @@ describe('dna2json ancestry', function() {
       });
     });
 
-    it('should parse a partial SNP with missing g and text c MT', function(done) {
-      var line = "rs9442398 MT 1021695 0 0";
+    it('should parse a partial SNP with missing g and text c PAR', function(done) {
+      var line = "rs9442398 25 1021695 0 0";
       var expected = {
         id: "rs9442398",
-        c: 'MT',
+        c: 'PAR',
         pos: 1021695,
         g: null
       };
@@ -138,7 +138,7 @@ describe('dna2json ancestry', function() {
     });
 
     it('should parse a partial SNP with missing g and text c Y', function(done) {
-      var line = "rs9442398 Y 1021695 0 0";
+      var line = "rs9442398 24 1021695 0 0";
       var expected = {
         id: "rs9442398",
         c: 'Y',
@@ -158,7 +158,7 @@ describe('dna2json ancestry', function() {
     });
 
     it('should parse a partial SNP with missing g and text c X', function(done) {
-      var line = "rs9442398 X 1021695 0 0";
+      var line = "rs9442398 23 1021695 0 0";
       var expected = {
         id: "rs9442398",
         c: 'X',
