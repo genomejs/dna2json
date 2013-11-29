@@ -1,7 +1,7 @@
 {
    "name":"dna2json",
    "description":"Formats your DNA file as JSON",
-   "version":"0.3.0",
+   "version":"0.3.1",
    "homepage":"http://github.com/genomejs/dna2json",
    "repository":"git://github.com/genomejs/dna2json.git",
    "author":"Fractal <contact@wearefractal.com> (http://wearefractal.com/)",
@@ -13,12 +13,12 @@
    
    "dependencies":{
       "event-stream":"*",
-      "optimist":"*"
+      "optimist":"*",
+      "JSONStream":"*"
    },
    "devDependencies":{
       "mocha":"*",
-      "should":"*",
-      "JSONStream":"*"
+      "should":"*"
    },
    "scripts":{
       "test":"mocha"
