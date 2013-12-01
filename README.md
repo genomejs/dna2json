@@ -101,7 +101,7 @@ Once you have your data in the right format you can use the library of genosets 
 
 You can view a list of these at [this npm search](https://npmjs.org/search?q=genoset)
 
-You can also make your own tools that analyze your DNA however you want. It's yours! Here is a tool that will help query your DNA [GQL](https://github.com/genosetjs/gql)
+You can also make your own tools that analyze your DNA however you want. It's yours! Here is a tool that will help query your DNA [GQL](https://github.com/genomejs/gql)
 
 ## LICENSE
 
