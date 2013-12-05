@@ -57,6 +57,7 @@ It will stream the SNPs to disk as JSON - pretty easy.
 ```javascript
 var dna = require('dna2json');
 var JSONStream = require('JSONStream');
+var fs = require('fs');
 
 // dna.createParser() returns a duplex stream
 // input = text from your dna file
