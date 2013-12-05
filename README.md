@@ -63,6 +63,8 @@ var JSONStream = require('JSONStream');
 // output = SNPs as JSON
 // to write to disk just pipe it to JSONStream then to fs
 
+var fs = require('fs');
+
 fs.createReadStream("dna.txt")
   .pipe(dna.createParser())
   .pipe(JSONStream.stringify())
