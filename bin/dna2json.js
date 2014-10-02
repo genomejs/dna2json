@@ -12,8 +12,8 @@ var inFile = argv._[0];
 var outFile = argv._[1];
 
 if (!inFile || !outFile) {
-  console.error("Missing argument");
-  console.error("Usage: dna2json <input file> <output file>");
+  console.error('Missing argument');
+  console.error('Usage: dna2json <input file> <output file>');
   process.exit();
 }
 
@@ -24,7 +24,7 @@ var jsonStream = fs.createWriteStream(path.join(process.cwd(), outFile));
 
 var snps = 0;
 var counter = es.map(function(data, cb){
-  console.log("Parsed", ++snps, "SNPs");
+  console.log('Parsed', ++snps, 'SNPs');
   cb(null, data);
 });
 

@@ -1,35 +1,45 @@
 {
-   "name":"dna2json",
-   "description":"Formats your DNA file as JSON",
-   "version":"0.3.1",
-   "homepage":"http://github.com/genomejs/dna2json",
-   "repository":"git://github.com/genomejs/dna2json.git",
-   "author":"Fractal <contact@wearefractal.com> (http://wearefractal.com/)",
-   "main":"./index.js",
-   "tags": ["23andme", "familytree", "ancestry", "dna", "genetics", "genes", "json", "format"],
-   "bin":{
-      "dna2json":"./bin/dna2json.js"
-   },
-   
-   "dependencies":{
-      "event-stream":"*",
-      "optimist":"*",
-      "JSONStream":"*"
-   },
-   "devDependencies":{
-      "mocha":"*",
-      "should":"*"
-   },
-   "scripts":{
-      "test":"mocha"
-   },
-   "engines":{
-      "node":">= 0.4.0"
-   },
-   "licenses":[
-      {
-         "type":"MIT",
-         "url":"http://github.com/genomejs/dna2json/raw/master/LICENSE"
-      }
-   ]
+  "name": "dna2json",
+  "description": "Formats your DNA file as JSON",
+  "version": "0.3.2",
+  "homepage": "http://github.com/genomejs/dna2json",
+  "repository": "git://github.com/genomejs/dna2json.git",
+  "author": "Fractal <contact@wearefractal.com> (http://wearefractal.com/)",
+  "main": "./index.js",
+  "tags": [
+    "23andme",
+    "familytree",
+    "ancestry",
+    "dna",
+    "genetics",
+    "genes",
+    "json",
+    "format",
+    "genome",
+    "genomejs"
+  ],
+  "bin": {
+    "dna2json": "./bin/dna2json.js"
+  },
+  "dependencies": {
+    "JSONStream": "^0.9.0",
+    "event-stream": "^3.1.7",
+    "optimist": "^0.6.1"
+  },
+  "devDependencies": {
+    "mocha": "^1.21.4",
+    "should": "^4.0.4"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "engines": {
+    "node": ">= 0.4.0"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/genomejs/dna2json/raw/master/LICENSE"
+    }
+  ]
 }
