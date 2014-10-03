@@ -10,7 +10,7 @@
 </tr>
 <tr>
 <td>Description</td>
-<td>Formats your DNA file as JSON</td>
+<td>Formats your DNA file as a leveldb database</td>
 </tr>
 <tr>
 <td>Node Version</td>
@@ -46,13 +46,15 @@ Use this if you just want to convert your data to the correct format so you can 
 $ npm install dna2json -g
 $ dna2json
 Usage: dna2json <input file> <output file>
-$ dna2json dna.txt dna.json
+$ dna2json genome.txt output.dna
 This will take a while...
 ```
 
-It will stream the SNPs to disk as JSON - pretty easy.
+It will stream the SNPs to disk as a new leveldb database - pretty easy.
 
 ## Module Usage
+
+Let's say you just want to parse the file and stream it as an array of JSON records to a JSON file, no leveldb:
 
 ```javascript
 var dna = require('dna2json');
@@ -64,30 +66,32 @@ var fs = require('fs');
 // output = SNPs as JSON
 // to write to disk just pipe it to JSONStream then to fs
 
-fs.createReadStream("dna.txt")
+fs.createReadStream('dna.txt')
   .pipe(dna.createParser())
   .pipe(JSONStream.stringify())
-  .pipe(fs.createWriteStream("dna.json"));
+  .pipe(fs.createWriteStream('dna.json'));
 ```
 
 ## SNP-JSON
 
 Every vendor has their own format for your DNA. I decided to make a standard format called SNP-JSON. This library will convert custom formats to this standard.
 
-SNP-JSON looks like this
+SNP-JSON looks like this in leveldb
 
 ```javascript
-[
-{"id":"rs10749813","c":1,"pos":73557945,"g":null},
-{"id":"rs4128552","c":1,"pos":73560811,"g":"GT"},
-{"id":"rs12033354","c":1,"pos":73573941,"g":"AG"},
-{"id":"rs4603080","c":1,"pos":73579237,"g":"AG"},
-{"id":"rs4582739","c":1,"pos":73602381,"g":"CT"},
-{"id":"rs4452995","c":1,"pos":73613560,"g":"CT"}
-]
+{
+"rs10749813":{"id":"rs10749813","c":1,"pos":73557945,"g":null},
+"rs4128552":{"id":"rs4128552","c":1,"pos":73560811,"g":"GT"},
+"rs12033354":{"id":"rs12033354","c":1,"pos":73573941,"g":"AG"},
+"rs4603080":{"id":"rs4603080","c":1,"pos":73579237,"g":"AG"},
+"rs4582739":{"id":"rs4582739","c":1,"pos":73602381,"g":"CT"},
+"rs4452995":{"id":"rs4452995","c":1,"pos":73613560,"g":"CT"}
+}
 ```
 
 Explanation:
+
+The values look like this
 
 | Key | Description |
 |-----|-------------|
@@ -95,6 +99,8 @@ Explanation:
 | c | Chromosome (1-22, X, Y, or MT) |
 | pos | GRCh position |
 | g | Genotype |
+
+The key is simply the RSID/Vendor ID for faster lookups in the db.
 
 ## Using your SNP-JSON
 
