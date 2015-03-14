@@ -4,9 +4,7 @@ var dna = require('../');
 var argv = require('optimist').argv;
 
 var fs = require('fs');
-var es = require('event-stream');
 var path = require('path');
-var JSONStream = require('JSONStream');
 
 var inFile = argv._[0];
 var outFile = argv._[1];
@@ -17,19 +15,16 @@ if (!inFile || !outFile) {
   process.exit();
 }
 
-console.log(inFile, outFile);
+var inPath = path.join(process.cwd(), inFile);
+var outPath = path.join(process.cwd(), outFile);
 
-var txtStream = fs.createReadStream(path.join(process.cwd(), inFile));
-var jsonStream = fs.createWriteStream(path.join(process.cwd(), outFile));
+console.log('Starting parser, please wait...');
 
-var snps = 0;
-var counter = es.map(function(data, cb){
-  console.log('Parsed', ++snps, 'SNPs');
-  cb(null, data);
+var txt = fs.readFileSync(inPath, 'utf8');
+dna.parse(txt, function(err, snps){
+  if (err) {
+    return console.error('Error parsing file:', err.message);
+  }
+  fs.writeFileSync(outPath, JSON.stringify(snps, null, 2));
+  console.log('All done! Your file is at', outPath);
 });
-
-txtStream
-  .pipe(dna.createParser())
-  .pipe(counter)
-  .pipe(JSONStream.stringify())
-  .pipe(jsonStream);

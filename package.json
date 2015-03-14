@@ -22,9 +22,10 @@
     "dna2json": "./bin/dna2json.js"
   },
   "dependencies": {
-    "JSONStream": "^0.9.0",
-    "event-stream": "^3.1.7",
-    "optimist": "^0.6.1"
+    "first-match": "0.0.1",
+    "lodash.reduce": "^3.0.0",
+    "optimist": "^0.6.1",
+    "require-dir": "^0.1.0"
   },
   "devDependencies": {
     "mocha": "^1.21.4",

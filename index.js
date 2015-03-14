@@ -1,4 +1,8 @@
+var requireDir = require('require-dir');
+var path = require('path');
+var providers = requireDir(path.join(__dirname, './lib/parsers'));
+
 module.exports = {
-  createParser: require('./lib/createParser'),
-  parseSNP: require('./lib/parseSNP')
+  parse: require('./lib/parse'),
+  providers: providers
 };

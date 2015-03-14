@@ -5,7 +5,7 @@
 ## Information
 
 <table>
-<tr> 
+<tr>
 <td>Package</td><td>dna2json</td>
 </tr>
 <tr>
@@ -50,13 +50,10 @@ $ dna2json dna.txt dna.json
 This will take a while...
 ```
 
-It will stream the SNPs to disk as JSON - pretty easy.
-
 ## Module Usage
 
 ```javascript
 var dna = require('dna2json');
-var JSONStream = require('JSONStream');
 var fs = require('fs');
 
 // dna.createParser() returns a duplex stream
@@ -64,10 +61,10 @@ var fs = require('fs');
 // output = SNPs as JSON
 // to write to disk just pipe it to JSONStream then to fs
 
-fs.createReadStream("dna.txt")
-  .pipe(dna.createParser())
-  .pipe(JSONStream.stringify())
-  .pipe(fs.createWriteStream("dna.json"));
+var txt = fs.readFileSync('dna.txt');
+dna.parse(txt, function(err, snps){
+  // snps = the object with your mutations
+});
 ```
 
 ## SNP-JSON
@@ -77,32 +74,62 @@ Every vendor has their own format for your DNA. I decided to make a standard for
 SNP-JSON looks like this
 
 ```javascript
-[
-{"id":"rs10749813","c":1,"pos":73557945,"g":null},
-{"id":"rs4128552","c":1,"pos":73560811,"g":"GT"},
-{"id":"rs12033354","c":1,"pos":73573941,"g":"AG"},
-{"id":"rs4603080","c":1,"pos":73579237,"g":"AG"},
-{"id":"rs4582739","c":1,"pos":73602381,"g":"CT"},
-{"id":"rs4452995","c":1,"pos":73613560,"g":"CT"}
-]
+{
+  "rs4477212": {
+    "chromosome": 1,
+    "genotype": "AA"
+  },
+  "rs3094315": {
+    "chromosome": 1,
+    "genotype": "AA"
+  },
+  "rs3131972": {
+    "chromosome": 1,
+    "genotype": "GG"
+  },
+  "rs12124819": {
+    "chromosome": 1,
+    "genotype": "AA"
+  },
+  "rs11240777": {
+    "chromosome": 1,
+    "genotype": "GG"
+  },
+  "rs6681049": {
+    "chromosome": 1,
+    "genotype": "CC"
+  },
+  ...
+}
 ```
 
 Explanation:
 
-| Key | Description |
-|-----|-------------|
-| id | RSID or vendor ID |
-| c | Chromosome (1-22, X, Y, or MT) |
-| pos | GRCh position |
-| g | Genotype |
+- The key is the RSID or vendor ID.
+- Chromosome is which chromosome the data came from (1-22, X, Y, or MT).
+- Genotype is the value for the RSID.
 
 ## Using your SNP-JSON
 
+### Just Write Code™
+
+In this example we will determine if you are immune to norovirus:
+
+```js
+var dna = require('./dna.json');
+
+if (dna.rs601338 = 'AA') {
+  // congrats you are immune!
+}
+```
+
+### Genosets
+
 Once you have your data in the right format you can use the library of genosets by genomejs.
 
-You can view a list of these at [this npm search](https://npmjs.org/search?q=genoset)
+You can view a list of these [by searching npm for genoset](https://npmjs.org/search?q=genoset)
 
-You can also make your own tools that analyze your DNA however you want. It's yours! Here is a tool that will help query your DNA [GQL](https://github.com/genomejs/gql)
+You can also publish your own tools that analyze your DNA! Here is a tool that we recommend to get you started [GQL](https://github.com/genomejs/gql)
 
 ## LICENSE
 
