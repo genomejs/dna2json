@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/genomejs/dna2json.png?branch=master)](https://travis-ci.org/genomejs/dna2json)
-
 [![NPM version](https://badge.fury.io/js/dna2json.png)](http://badge.fury.io/js/dna2json)
 
 ## Information
