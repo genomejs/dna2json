@@ -35,9 +35,5 @@
       "type": "MIT",
       "url": "http://github.com/genomejs/dna2json/raw/master/LICENSE"
     }
-  ],
-  "devDependencies": {
-    "mocha": "^2.2.1",
-    "should": "^5.2.0"
-  }
+  ]
 }
