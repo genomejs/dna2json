@@ -71,7 +71,7 @@ Every vendor has their own format for your DNA. I decided to make a standard for
 
 SNP-JSON looks like this
 
-```javascript
+```json
 {
   "rs4477212": {
     "chromosome": 1,
@@ -116,7 +116,7 @@ In this example we will determine if you are immune to norovirus:
 ```js
 var dna = require('./dna.json');
 
-if (dna.rs601338 = 'AA') {
+if (dna.rs601338.genotype == 'AA') {
   // congrats you are immune!
 }
 ```
