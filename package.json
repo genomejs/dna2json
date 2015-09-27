@@ -25,7 +25,7 @@
     "first-match": "0.0.1",
     "lodash.reduce": "^3.0.0",
     "optimist": "^0.6.1",
-    "require-dir": "^0.1.0"
+    "require-dir": "^0.3.0"
   },
   "engines": {
     "node": ">= 0.4.0"
