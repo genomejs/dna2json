@@ -34,8 +34,6 @@ Your DNA file from any vendor will be a big list of these SNPs. Think of it like
 | ancestryDNA | Yes | 99 USD | Saliva | 682,549 | 885 | 17,604 | 0 | [Yes](http://ldna.ancestry.com/atFAQ.aspx#raw-3) |
 | FamilyTree | Yes | 99 USD | Cheek Swab | 708,092 | 0 | 18,091 | 0 | [Yes](http://www.familytreedna.com/faq/answers.aspx?id=17#606) |
 
-tl;dr use 23andMe they provide more data and are the cheapest
-
 ## CLI Usage
 
 Use this if you just want to convert your data to the correct format so you can start querying your genome.
