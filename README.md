@@ -20,9 +20,9 @@
 
 ### SNP
 
-A SNP (single-nucleotide polymorphism - pronounced "snip") is a mutation in your genome. SNPs can tell you a lot about yourself (hair color, height, muscle type, allergies, response to disease, response to pharmaceuticals, heritage, etc.).
+A SNP (Single-Nucleotide Polymorphism - pronounced *snip*) is a variation of a single nucleotide (`A`, `G`, `C` or `T`) at some location in your genome. The presense of particular variants, or groups thereof, can tell you a lot about yourself (hair color, height, muscle type, allergies, response to disease, response to pharmaceuticals, heritage, etc.). 
 
-Your DNA file from any vendor will be a big list of these SNPs. Think of it like a diff against a reference human genome. Most vendors will compare your genome against [GRCh Build 37](http://www.ncbi.nlm.nih.gov/assembly/2758/)
+Personal genome vendors will typically produce an analysis that covers some of these attributes - but will also provide you with 'raw' data, should you wish to investigate further.Your 'raw' data from any vendor will be a list of several hundred thousand SNPs, located across the [autosomes](https://en.wikipedia.org/wiki/Autosome) (chromosomes 1-22), the [sex chromosomes](https://en.wikipedia.org/wiki/Allosome) (X and Y), and possibly the [mitochondrial chromosome](https://en.wikipedia.org/wiki/Mitochondrial_DNA). Given that your genome contains two copies of each autosome, and either XX (female) or XY (male), the data contains a 'genotype' composed of the two variants at each location.
 
 ![autosome](http://www.isogg.org/w/images/e/ed/Autosomes_diagram.jpg)
 
@@ -30,9 +30,11 @@ Your DNA file from any vendor will be a big list of these SNPs. Think of it like
 
 | Name | Supported | Price | Sample | Autosomal SNPs | Y SNPs | X SNPs | MT SNPs | Raw Data |
 |------|-----------|-------|--------|----------------|--------|--------|---------|----------|
-| 23andMe | Yes | 199 USD | Saliva | 967,000 | 3,089 | 26,087 | 2,737 | [Yes](https://www.23andme.com/you/download/) |
+| 23andMe | Yes | 199/99 USD<sup>*</sup> | Saliva | 967,000 | 3,089 | 26,087 | 2,737 | [Yes](https://www.23andme.com/you/download/) |
 | ancestryDNA | Yes | 99 USD | Saliva | 682,549 | 885 | 17,604 | 0 | [Yes](http://ldna.ancestry.com/atFAQ.aspx#raw-3) |
 | FamilyTree | Yes | 99 USD | Cheek Swab | 708,092 | 0 | 18,091 | 0 | [Yes](http://www.familytreedna.com/faq/answers.aspx?id=17#606) |
+
+<sup>*</sup> 23andMe picing is 199 USD domestically and 99 USD abroad.
 
 ## CLI Usage
 
@@ -131,7 +133,7 @@ You can also publish your own tools that analyze your DNA! Here is a tool that w
 
 (MIT License)
 
-Copyright (c) 2013 Fractal <contact@wearefractal.com>
+Copyright (c) 2013-2016 Fractal <contact@wearefractal.com>
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
