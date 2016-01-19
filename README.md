@@ -54,11 +54,6 @@ This will take a while...
 var dna = require('dna2json');
 var fs = require('fs');
 
-// dna.createParser() returns a duplex stream
-// input = text from your dna file
-// output = SNPs as JSON
-// to write to disk just pipe it to JSONStream then to fs
-
 var txt = fs.readFileSync('dna.txt');
 dna.parse(txt, function(err, snps){
   // snps = the object with your mutations
