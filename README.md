@@ -102,6 +102,18 @@ Explanation:
 - Chromosome is which chromosome the data came from (1-22, X, Y, or MT).
 - Genotype is the value for the RSID.
 
+### Differences between formats
+
+SNP-JSON, SNPedia and vendor formats use different notations to indicate indels and no-calls.
+
+| Format        | Insertion            | Deletion | No Call | *Reference* |
+|---------------|----------------------|----------|---------|-------------|
+| 23AndMe       | `I`                  | `D`      | `-`     | https://customercare.23andme.com/hc/en-us/articles/212196888-What-does-not-determined-or-not-genotyped-mean- |
+| AncestryDNA   | `I`                  | `D`      | `0`     | https://www.ancestry.com/dna/en/legal/us/faq#raw-6 |
+| FamilyTreeDNA | `I`                  | `D`      | `-`     | https://www.familytreedna.com/learn/autosomal-ancestry/universal-dna-matching/read-family-finder-raw-data-file/ |
+| SNP-JSON      | `I`                  | `-`      | `?`     | |
+| SNPedia       | (the actual letters) | `-`      | N/A     | https://www.snpedia.com/index.php/Talk:Rs5030655 |
+
 ## Using your SNP-JSON
 
 ### Just Write Code™
